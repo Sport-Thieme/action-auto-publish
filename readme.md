@@ -1,7 +1,7 @@
 
 # Sport-Thieme Auto Publish
 
-This action is inspired and reusing code from the awesome [Paul Hatch's semantic-version](https://github.com/PaulHatch/semantic-version). I did not forked, because of renaming it to our conventions and doing the versioning part by package versions instead of tags.
+This action is inspired and reusing code from the awesome [Paul Hatch's semantic-version](https://github.com/PaulHatch/semantic-version). I did not fork, because of renaming it to our conventions and doing the versioning part by package versions instead of tags.
 
 It's doing a diff between the tag matching the current package version and determines based on patterns if it should publish major, minor or patch.
 
