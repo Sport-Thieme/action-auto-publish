@@ -1,0 +1,27 @@
+name: "Auto publish for sport-thieme packages"
+description: "Determines version of a repo based on released packages in the github package registry"
+branding:
+  icon: "layers"
+  color: "blue"
+inputs:
+  changePath:
+    description: "Path to check for changes. If any changes are detected in the path the 'changed' output will true. Enter multiple paths separated by spaces."
+    required: false
+  majorPattern:
+    description: "A pattern to search. Default is #major"
+  minorPattern:
+    description: "A pattern to search. Default is #minor"
+outputs:
+  previousVersion:
+    description: "The version the package had before this action was running"
+  version:
+    description: "The new version to set"
+  major:
+    description: "The new major value"
+  minor:
+    description: "The new minor value"
+  patch:
+    description: "The new patch value"
+runs:
+  using: "node12"
+  main: "dist/index.js"
