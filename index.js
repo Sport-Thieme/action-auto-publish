@@ -134,8 +134,9 @@ async function run() {
     const log = await cmd(logCommand);
     const history = log.trim().split("\n").reverse();
 
-    core.info(`HISTORY FOR SEARCH: \n\t${history.join("\n\t")}\n`);
-
+    if (core.getInput("debugHistory")) {
+      core.info(`HISTORY FOR SEARCH: \n\t${history.join("\n\t")}\n`);
+    }
     const majorPattern = createMatchTest(
       core.getInput("majorPattern") || "#major"
     );

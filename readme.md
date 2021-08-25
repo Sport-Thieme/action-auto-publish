@@ -45,6 +45,8 @@ jobs:
           minorPattern: "#minor"
           # You can choose to use latest or if false the action takes the last published version (any version)
           useLatest: true
+          # If true, the entire history from the time of the last version tag to the current reference is displayed.
+          debugHistory: false
         env:
           # Important this action needs to have access to your registry.
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

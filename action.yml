@@ -11,6 +11,8 @@ inputs:
     description: "A pattern to search. Default is #major"
   minorPattern:
     description: "A pattern to search. Default is #minor"
+  debugHistory:
+    description: "If true, the entire history from the time of the last version tag to the current reference is displayed."
 outputs:
   previousVersion:
     description: "The version the package had before this action was running"
