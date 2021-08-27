@@ -1173,7 +1173,7 @@ const currentVersion = async () => {
 async function run() {
   const changePath = core.getInput("changePath");
   try {
-    await cmd("git fetch --all");
+    await cmd("git fetch --tags");
     const branch = (await cmd("git", "rev-parse", "HEAD")).trim();
     const previousVersion = await currentVersion();
 
