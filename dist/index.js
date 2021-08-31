@@ -1187,7 +1187,8 @@ async function run() {
           `describe`,
           `--tags`,
           `--abbrev=0`,
-          `--exact-match=v${previousVersion.string}`
+          `--exact-match`,
+          `Ïv${previousVersion.string}`
         )
       ).trim();
     } catch (err) {
