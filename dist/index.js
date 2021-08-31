@@ -1239,7 +1239,7 @@ async function run() {
     const logList = log.trim().split("\n");
 
     const history =
-      tag === "" ? logList.slice(0, 1).reverse() : logList.reverse();
+      tag === "" ? logList.slice(0, 1) : logList.reverse();
 
     if (core.getInput("debugHistory")) {
       core.info(`HISTORY FOR SEARCH: \n\t${history.join("\n\t")}\n`);
