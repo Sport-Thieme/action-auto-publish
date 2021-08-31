@@ -83,7 +83,7 @@ async function run() {
           `describe`,
           `--tags`,
           `--abbrev=0`,
-          `--match=v${previousVersion.string}`
+          `--exact-match=v${previousVersion.string}`
         )
       ).trim();
     } catch (err) {
@@ -132,7 +132,10 @@ async function run() {
     }
 
     const log = await cmd(logCommand);
-    const history = log.trim().split("\n").reverse();
+    const logList = log.trim().split("\n");
+
+    const history =
+      tag === "" ? logList.slice(0, 1) : logList.reverse();
 
     if (core.getInput("debugHistory")) {
       core.info(`HISTORY FOR SEARCH: \n\t${history.join("\n\t")}\n`);
